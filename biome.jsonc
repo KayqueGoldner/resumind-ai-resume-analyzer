@@ -13,6 +13,9 @@
       },
       "performance": {
         "noImgElement": "warn"
+      },
+      "style": {
+        "noNestedTernary": "off"
       }
     }
   }
