@@ -10,3 +10,7 @@ export function formatSize(bytes: number): string {
 
   return `${Number.parseFloat((bytes / k ** i).toFixed(2))} ${sizes[ i ]}`;
 }
+
+export const generateUUID = () => {
+  return crypto.randomUUID();
+}
