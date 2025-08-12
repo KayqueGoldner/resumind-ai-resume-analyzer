@@ -1,87 +1,88 @@
-# Welcome to React Router!
+# Resumind AI Resume Analyzer
 
-A modern, production-ready template for building full-stack React applications using React Router.
+> A modern, accessible, and type-safe resume analysis app built with React Router, TypeScript, and PDF.js.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+![AI Resume Analyzer Screenshot](/resumind-ai-resume-analyzer.png "Resume Analyzer Screenshot")
 
-## Features
+## 🚀 Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- **Resume Upload & Parsing**: Upload PDF resumes and extract content for analysis using PDF.js
+- **ATS Compatibility Scoring**: Analyze resumes for Applicant Tracking System (ATS) friendliness
+- **Visual Feedback**: Score badges, gauges, and detailed feedback for resume improvements
+- **Accessibility First**: Strict a11y rules and semantic HTML with comprehensive ARIA support
+- **Modern UI**: TailwindCSS 4.0, custom SVG icons, and responsive design
+- **No Backend Required**: All processing is done client-side with React Router 7.0
 
-## Getting Started
+## 🛠️ Tech Stack
 
-### Installation
+- **Frontend**: React 19, React Router 7, TypeScript 5
+- **Styling**: TailwindCSS 4.0 with animations
+- **PDF Parsing**: [pdf.js](https://mozilla.github.io/pdf.js/) v5.3
+- **State Management**: Zustand 5.0
+- **File Upload**: React Dropzone 14.0
+- **Lint/Format**: [Biome](https://biomejs.dev/) 2.1, [Ultracite](https://github.com/ultracite/ultracite) 5.0
+- **Build Tool**: Vite 6.0
 
-Install the dependencies:
+## 📂 Project Structure
+
+- `app/` — Main app code
+  - `components/` — UI components (accordion, ats, details, file-uploader, etc.)
+  - `lib/` — Utility modules (pdf2img, puter, utils)
+  - `routes/` — App routes (auth, home, resume, upload, wipe)
+- `constants/` — App-wide constants
+- `public/` — Static assets (SVGs, images, PDF worker)
+  - `icons/` — SVG icons (ats-good, ats-bad, warning, etc.)
+  - `images/` — Images and backgrounds
+- `types/` — TypeScript type definitions
+
+## ⚡ Getting Started
+
+### 1. Install dependencies
 
 ```bash
 npm install
 ```
 
-### Development
-
-Start the development server with HMR:
+### 2. Run the development server
 
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+The app will be available on the development server (URL shown in console).
 
-## Building for Production
+### 3. Type checking
 
-Create a production build:
+```bash
+npm run typecheck
+```
+
+### 4. Build for production
 
 ```bash
 npm run build
+npm run start
 ```
 
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
+### 5. Docker Deployment
 
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+docker build -t ai-resume-analyzer .
+docker run -p 3000:3000 ai-resume-analyzer
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+## 🧑‍💻 Accessibility & Code Quality
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+- Enforced by [Ultracite](https://github.com/ultracite/ultracite) and Biome
+- Strict a11y, type safety, and consistent formatting
+- See `.github/copilot-instructions.md` for full rules
 
-### DIY Deployment
+## 🤝 Contributing
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add feature'`)
+4. Push to your branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
 
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+All contributions are welcome!
